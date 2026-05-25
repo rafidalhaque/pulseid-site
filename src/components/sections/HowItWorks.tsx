@@ -2,12 +2,12 @@ const steps = [
   {
     n: "01",
     title: "Enroll a member",
-    body: "An admin adds the member through the dashboard. Their phone is paired with PulseID and assigned a signed identifier.",
+    body: "An admin adds the member through the dashboard. Their device is enrolled and assigned a signed daily identifier.",
   },
   {
     n: "02",
     title: "Phone broadcasts quietly",
-    body: "In the background, the phone advertises a rotating BLE identifier. Nothing personal is broadcast — only a daily-rotating UUID.",
+    body: "With the app open, the phone advertises a rotating BLE identifier. Nothing personal is broadcast — only a daily-rotating UUID that resets every 24 hours.",
   },
   {
     n: "03",

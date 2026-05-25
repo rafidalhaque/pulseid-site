@@ -12,7 +12,7 @@ const features = [
   {
     icon: Bluetooth,
     title: "Passive BLE detection",
-    body: "Members are recognized as they approach the door. No app to open, no button to press.",
+    body: "Members are recognized as they approach the door. Open the app once, tap broadcast. PulseID handles the rest.",
   },
   {
     icon: KeyRound,
