@@ -1,5 +1,6 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
+import { l as logoUrl } from "./router-DjhuLAfh.js";
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
@@ -7,7 +8,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Mail } from "lucide-react";
 function Logo({ className }) {
-  return /* @__PURE__ */ jsx("img", { src: "/favicon.png", alt: "PulseID Logo", className });
+  return /* @__PURE__ */ jsx("img", { src: logoUrl, alt: "PulseID Logo", className });
 }
 function cn(...inputs) {
   return twMerge(clsx(inputs));

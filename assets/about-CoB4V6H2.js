@@ -1,6 +1,8 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-BrUy3cAo.js";
+import { a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-BAXUxpJG.js";
 import "@tanstack/react-router";
+import "./router-DjhuLAfh.js";
+import "@tanstack/react-query";
 import "react";
 import "@radix-ui/react-slot";
 import "class-variance-authority";

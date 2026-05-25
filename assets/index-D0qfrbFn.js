@@ -1,8 +1,10 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-BrUy3cAo.js";
+import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-BAXUxpJG.js";
 import * as React from "react";
 import { Bluetooth, KeyRound, ClipboardCheck, RefreshCw, CalendarDays, LayoutDashboard, Building2, BookOpen, Users } from "lucide-react";
 import "@tanstack/react-router";
+import "./router-DjhuLAfh.js";
+import "@tanstack/react-query";
 import "@radix-ui/react-slot";
 import "class-variance-authority";
 import "clsx";
