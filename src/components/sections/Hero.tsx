@@ -19,12 +19,11 @@ export function Hero() {
             Built by InsanLab
           </div>
           <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Office access and attendance, through the phone in your pocket.
+            Office access and attendance, starting from the palm of your hand.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             PulseID uses Bluetooth Low Energy to recognize trusted team members as they arrive —
-            unlocking entry and logging attendance automatically. No cards. No NFC taps. No queues
-            at the door.
+            unlocking entry and logging attendance when the app is broadcasting. No cards. No NFC taps.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">

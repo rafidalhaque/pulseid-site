@@ -11,8 +11,8 @@ import {
 const features = [
   {
     icon: Bluetooth,
-    title: "Passive BLE detection",
-    body: "Members are recognized as they approach the door. Open the app once, tap broadcast. PulseID handles the rest.",
+    title: "Active BLE broadcast",
+    body: "Open the app and tap broadcast to unlock. PulseID recognizes your device as you approach the door.",
   },
   {
     icon: KeyRound,

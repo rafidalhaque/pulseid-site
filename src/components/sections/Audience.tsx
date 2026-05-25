@@ -4,7 +4,7 @@ const groups = [
   {
     icon: Building2,
     title: "Small offices",
-    body: "Teams of 5–50 who want reliable access and attendance without enterprise hardware contracts.",
+    body: "Teams of 5–25 who want reliable access and attendance without enterprise hardware contracts.",
   },
   {
     icon: BookOpen,

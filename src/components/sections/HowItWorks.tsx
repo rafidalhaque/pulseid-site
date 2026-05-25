@@ -31,7 +31,7 @@ export function HowItWorks() {
             From the doorway to the dashboard.
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Four small steps. Once set up, members don&apos;t have to think about it again.
+            Four small steps. Reliable entry for every member, every time the app is open.
           </p>
         </div>
 
