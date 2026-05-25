@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "PulseID is built by InsanLab, an Islamic student-led R&D club. Learn about the people and principles behind the project.",
+          "PulseID is an ESP32-based access and attendance control system designed for office environments, developed by InsanLab.",
       },
     ],
   }),
@@ -26,40 +26,35 @@ function About() {
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <p className="text-sm font-medium text-primary">About</p>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              A small R&amp;D club.
+              PulseID
             </h1>
             <div className="prose-invert mt-8 space-y-6 text-base leading-relaxed text-muted-foreground">
               <p>
-                InsanLab is an Islamic student-led research and development club. We build practical
-                tools for our community — software that respects people&apos;s time, attention, and
-                dignity.
+                PulseID is an ESP32-based access and attendance control system designed for office
+                environments.
               </p>
               <p>
-                PulseID grew out of a simple frustration: managing attendance and access for our own
-                gatherings was tedious. Cards got lost. Sign-in sheets piled up. Commercial systems
-                were either too expensive or designed for enterprises we are not. So we built what
-                we needed, and made it available to teams like ours.
+                It enables secure, low-cost, and customizable identity verification for entry
+                management and attendance tracking using embedded hardware. Instead of relying on
+                traditional biometric machines or proprietary systems, PulseID is built as a
+                flexible and hackable alternative that can be adapted to different organizational
+                needs.
               </p>
-              <h2 className="text-xl font-semibold text-foreground">What guides us</h2>
-              <ul className="list-disc space-y-2 pl-5">
-                <li>
-                  <span className="text-foreground">Modesty in design.</span> Useful before flashy.
-                  Clear before clever.
-                </li>
-                <li>
-                  <span className="text-foreground">Respect for privacy.</span> Identifiers rotate
-                  daily; we collect the minimum needed.
-                </li>
-                <li>
-                  <span className="text-foreground">Care for the user.</span> Members should not
-                  have to think about the system to use it.
-                </li>
-                <li>
-                  <span className="text-foreground">Service over scale.</span> We support small
-                  teams well rather than chasing growth.
-                </li>
-              </ul>
-              <p>If our work is useful to your team, we would be glad to hear from you.</p>
+              <p>
+                The system is designed around real-world constraints found in offices and small
+                organizations: reliability, simplicity, and ease of deployment. It integrates
+                hardware-level authentication with software-side logging to maintain accurate
+                records of access events and attendance activity.
+              </p>
+              <p>
+                PulseID is developed inside InsanLab as part of a broader effort to build practical
+                infrastructure systems that replace closed, expensive, and inflexible tools with
+                open and modular alternatives.
+              </p>
+              <p>
+                This is an active project and continues to evolve as new features and deployment
+                scenarios are tested.
+              </p>
             </div>
           </div>
         </section>
