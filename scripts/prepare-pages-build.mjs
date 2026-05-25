@@ -34,9 +34,9 @@ try {
   if (typeof fetchHandler === "function") {
     const url = "http://localhost/";
     const req = new Request(url, {
-      headers: { host: "localhost" }
+      headers: { host: "localhost" },
     });
-    
+
     // Some libraries check for these properties directly
     const env = {};
     const ctx = {

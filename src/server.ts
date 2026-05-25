@@ -49,7 +49,8 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
-      const { createStartHandler, defaultStreamHandler } = await import("@tanstack/react-start/server");
+      const { createStartHandler, defaultStreamHandler } =
+        await import("@tanstack/react-start/server");
       const { getRouter } = await import("./router");
       const { startInstance } = await import("./start");
 
