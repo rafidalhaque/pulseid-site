@@ -9,12 +9,12 @@ export function SiteFooter() {
           <div className="text-sm">
             <p className="font-medium text-foreground">PulseID</p>
             <p className="text-muted-foreground">
-              A project by Team Sabily · Bangladesh
+              A project by InsanLab
             </p>
           </div>
         </div>
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Team Sabily. All rights reserved.
+          © {new Date().getFullYear()} InsanLab. All rights reserved.
         </p>
       </div>
     </footer>

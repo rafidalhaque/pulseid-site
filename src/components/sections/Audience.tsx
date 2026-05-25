@@ -14,7 +14,7 @@ const groups = [
   {
     icon: Users,
     title: "Local community teams",
-    body: "Volunteer groups and project teams in Bangladesh and beyond, run on modest budgets.",
+    body: "Volunteer groups and project teams run on modest budgets.",
   },
 ];
 

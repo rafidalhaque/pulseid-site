@@ -76,14 +76,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "PulseID is a phone-based BLE access control and attendance system for small offices and student organizations. Built by Team Sabily.",
+          "PulseID is a phone-based BLE access control and attendance system for small offices and student organizations. Built by InsanLab.",
       },
-      { name: "author", content: "Team Sabily" },
+      { name: "author", content: "InsanLab" },
       { property: "og:title", content: "PulseID — BLE Office Access & Attendance" },
       {
         property: "og:description",
         content:
-          "Passive Bluetooth-based entry and auto attendance logging. No cards, no NFC. Built by Team Sabily.",
+          "Passive Bluetooth-based entry and auto attendance logging. No cards, no NFC. Built by InsanLab.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
