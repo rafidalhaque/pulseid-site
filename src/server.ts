@@ -56,7 +56,8 @@ export default {
       const handler = createStartHandler({
         createRouter: getRouter,
         getOptions: () => startInstance.getOptions(),
-      })(defaultStreamHandler);
+        handler: defaultStreamHandler,
+      });
 
       const response = await handler(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
