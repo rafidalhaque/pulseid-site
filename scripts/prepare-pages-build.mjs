@@ -1,5 +1,6 @@
 import { cp, mkdir, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { FastURL } from "srvx";
 
 const root = process.cwd();
 const clientDir = path.join(root, "dist/client");
@@ -14,6 +15,8 @@ await mkdir(clientAssetsDir, { recursive: true });
 // 1. Prepare Cloudflare _worker.js
 const serverFile = path.join(serverDir, "server.js");
 await cp(serverFile, path.join(clientDir, "_worker.js"));
+// Also keep server.js for relative imports from assets/
+await cp(serverFile, path.join(clientDir, "server.js"));
 
 // 2. Copy server assets to client (sometimes needed by TanStack Start)
 const serverAssetEntries = await readdir(serverAssetsDir, { withFileTypes: true });
@@ -29,8 +32,21 @@ try {
   const fetchHandler = server.default?.fetch || server.fetch;
 
   if (typeof fetchHandler === "function") {
-    const req = new Request("http://localhost/");
-    const res = await fetchHandler(req);
+    const url = "http://localhost/";
+    const req = new Request(url, {
+      headers: { host: "localhost" }
+    });
+    
+    // Some libraries check for these properties directly
+    const env = {};
+    const ctx = {
+      waitUntil: (promise) => {
+        if (promise instanceof Promise) promise.catch(console.error);
+      },
+      passThroughOnException: () => {},
+    };
+
+    const res = await fetchHandler.call(server.default || server, req, env, ctx);
     const html = await res.text();
 
     const indexPath = path.join(clientDir, "index.html");
