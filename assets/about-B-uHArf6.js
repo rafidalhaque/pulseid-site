@@ -21,23 +21,19 @@ function About() {
           /* @__PURE__ */ jsxs("ul", { className: "list-disc space-y-2 pl-5", children: [
             /* @__PURE__ */ jsxs("li", { children: [
               /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Modesty in design." }),
-              " ",
-              "Useful before flashy. Clear before clever."
+              " Useful before flashy. Clear before clever."
             ] }),
             /* @__PURE__ */ jsxs("li", { children: [
               /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Respect for privacy." }),
-              " ",
-              "Identifiers rotate daily; we collect the minimum needed."
+              " Identifiers rotate daily; we collect the minimum needed."
             ] }),
             /* @__PURE__ */ jsxs("li", { children: [
               /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Care for the user." }),
-              " ",
-              "Members should not have to think about the system to use it."
+              " Members should not have to think about the system to use it."
             ] }),
             /* @__PURE__ */ jsxs("li", { children: [
               /* @__PURE__ */ jsx("span", { className: "text-foreground", children: "Service over scale." }),
-              " ",
-              "We support small teams well rather than chasing growth."
+              " We support small teams well rather than chasing growth."
             ] })
           ] }),
           /* @__PURE__ */ jsx("p", { children: "If our work is useful to your team, we would be glad to hear from you." })

@@ -1,19 +1,26 @@
 import { AsyncLocalStorage } from "node:async_hooks";
-import { H3Event, toResponse } from "h3-v2";
+import { clearSession, deleteCookie, parseCookies, getRequestHost, getRequestIP, getRequestProtocol, getRequestURL, getSession, getValidatedQuery, H3Event, toResponse, sealSession, setCookie, sanitizeStatusCode, sanitizeStatusMessage, unsealSession, updateSession, useSession } from "h3-v2";
 import { rootRouteId, defaultSerovalPlugins, makeSerovalPlugin, createRawStreamRPCPlugin, invariant, isNotFound, isRedirect, getScriptPreloadAttrs, getStylesheetHref, resolveManifestCssLink, resolveManifestAssetLink, getManifestScriptFormat, createSerializationAdapter, isResolvedRedirect, executeRewriteInput } from "@tanstack/router-core";
 import { toCrossJSONStream, fromJSON, toCrossJSONAsync } from "seroval";
 import { createMemoryHistory } from "@tanstack/history";
+import { c as createMiddleware } from "./createMiddleware-BvN2ghIY.js";
 import { mergeHeaders } from "@tanstack/router-core/ssr/client";
 import { getNormalizedURL, getOrigin, attachRouterServerSsrUtils } from "@tanstack/router-core/ssr/server";
+import { attachRouterServerSsrUtils as attachRouterServerSsrUtils2, createRequestHandler, defineHandlerCallback, transformPipeableStreamWithRouter, transformReadableStreamWithRouter } from "@tanstack/router-core/ssr/server";
 import "react";
 import { RouterProvider } from "@tanstack/react-router";
 import { jsx } from "react/jsx-runtime";
-import { defineHandlerCallback, renderRouterToStream } from "@tanstack/react-router/ssr/server";
+import { defineHandlerCallback as defineHandlerCallback2, renderRouterToStream, renderRouterToString } from "@tanstack/react-router/ssr/server";
 function StartServer(props) {
   return /* @__PURE__ */ jsx(RouterProvider, { router: props.router });
 }
-var defaultStreamHandler = defineHandlerCallback(({ request, router, responseHeaders }) => renderRouterToStream({
+var defaultStreamHandler = defineHandlerCallback2(({ request, router, responseHeaders }) => renderRouterToStream({
   request,
+  router,
+  responseHeaders,
+  children: /* @__PURE__ */ jsx(StartServer, { router })
+}));
+var defaultRenderHandler = defineHandlerCallback2(({ router, responseHeaders }) => renderRouterToString({
   router,
   responseHeaders,
   children: /* @__PURE__ */ jsx(StartServer, { router })
@@ -68,12 +75,111 @@ function getH3Event() {
   if (!event) throw new Error(`No StartEvent found in AsyncLocalStorage. Make sure you are using the function within the server runtime.`);
   return event.h3Event;
 }
+function getRequest() {
+  return getH3Event().req;
+}
+function getRequestHeaders() {
+  return getH3Event().req.headers;
+}
+function getRequestHeader(name) {
+  return getRequestHeaders().get(name) || void 0;
+}
+function getRequestIP$1(opts) {
+  return getRequestIP(getH3Event(), opts);
+}
+function getRequestHost$1(opts) {
+  return getRequestHost(getH3Event(), opts);
+}
+function getRequestUrl(opts) {
+  return getRequestURL(getH3Event(), opts);
+}
+function getRequestProtocol$1(opts) {
+  return getRequestProtocol(getH3Event(), opts);
+}
+function setResponseHeaders(headers) {
+  const event = getH3Event();
+  for (const [name, value] of Object.entries(headers)) event.res.headers.set(name, value);
+}
+function getResponseHeaders() {
+  return getH3Event().res.headers;
+}
+function getResponseHeader(name) {
+  return getH3Event().res.headers.get(name) || void 0;
+}
+function setResponseHeader(name, value) {
+  const event = getH3Event();
+  if (Array.isArray(value)) {
+    event.res.headers.delete(name);
+    for (const valueItem of value) event.res.headers.append(name, valueItem);
+  } else event.res.headers.set(name, value);
+}
+function removeResponseHeader(name) {
+  getH3Event().res.headers.delete(name);
+}
+function clearResponseHeaders(headerNames) {
+  const event = getH3Event();
+  if (headerNames && headerNames.length > 0) for (const name of headerNames) event.res.headers.delete(name);
+  else for (const name of event.res.headers.keys()) event.res.headers.delete(name);
+}
+function getResponseStatus() {
+  return getH3Event().res.status || 200;
+}
+function setResponseStatus(code, text) {
+  const event = getH3Event();
+  if (code) event.res.status = sanitizeStatusCode(code, event.res.status);
+  if (text) event.res.statusText = sanitizeStatusMessage(text);
+}
+function getCookies() {
+  const cookies = parseCookies(getH3Event());
+  const definedCookies = /* @__PURE__ */ Object.create(null);
+  for (const [name, value] of Object.entries(cookies)) if (value !== void 0) definedCookies[name] = value;
+  return definedCookies;
+}
+function getCookie(name) {
+  return getCookies()[name];
+}
+function setCookie$1(name, value, options) {
+  setCookie(getH3Event(), name, value, options);
+}
+function deleteCookie$1(name, options) {
+  deleteCookie(getH3Event(), name, options);
+}
+function getDefaultSessionConfig(config) {
+  return {
+    name: "start",
+    ...config
+  };
+}
+function useSession$1(config) {
+  return useSession(getH3Event(), getDefaultSessionConfig(config));
+}
+function getSession$1(config) {
+  return getSession(getH3Event(), getDefaultSessionConfig(config));
+}
+function updateSession$1(config, update) {
+  return updateSession(getH3Event(), getDefaultSessionConfig(config), update);
+}
+function sealSession$1(config) {
+  return sealSession(getH3Event(), getDefaultSessionConfig(config));
+}
+function unsealSession$1(config, sealed) {
+  return unsealSession(getH3Event(), getDefaultSessionConfig(config), sealed);
+}
+function clearSession$1(config) {
+  return clearSession(getH3Event(), {
+    name: "start",
+    ...config
+  });
+}
 function getResponse() {
   return getH3Event().res;
 }
+function getValidatedQuery$1(schema) {
+  return getValidatedQuery(getH3Event(), schema);
+}
 var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 async function getStartManifest(matchedRoutes) {
-  const { tsrStartManifest } = await import("./_tanstack-start-manifest_v-DrDMTZNP.js");
+  const { tsrStartManifest } = await import("./_tanstack-start-manifest_v-FhrD3b3f.js");
   const startManifest = tsrStartManifest();
   let routes = startManifest.routes;
   routes[rootRouteId];
@@ -176,27 +282,6 @@ function flattenMiddlewares(middlewares, maxDepth = 100) {
   recurse(middlewares, 0);
   return flattened;
 }
-var createMiddleware = (options, __opts) => {
-  const resolvedOptions = {
-    type: "request",
-    ...__opts || options
-  };
-  return {
-    options: resolvedOptions,
-    middleware: (middleware) => {
-      return createMiddleware({}, Object.assign(resolvedOptions, { middleware }));
-    },
-    inputValidator: (inputValidator) => {
-      return createMiddleware({}, Object.assign(resolvedOptions, { inputValidator }));
-    },
-    client: (client) => {
-      return createMiddleware({}, Object.assign(resolvedOptions, { client }));
-    },
-    server: (server2) => {
-      return createMiddleware({}, Object.assign(resolvedOptions, { server: server2 }));
-    }
-  };
-};
 var innerCreateCsrfMiddleware = (opts = {}) => {
   const middleware = createMiddleware().server(async (ctx) => {
     const csrfCtx = ctx;
@@ -1180,8 +1265,8 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
   const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-    import("./router-BNl-oEmm.js"),
-    import("./start-C8r3Uzgx.js"),
+    import("./router-DbyJXF1k.js"),
+    import("./start-LbDvuLKC.js"),
     import("./empty-plugin-adapters-BFgPZ6_d.js")
   ]);
   return {
@@ -1465,10 +1550,10 @@ async function handleServerRoutes({ getRouter, request, url, executeRouter, cont
       for (const m of flattened) if (!executedRequestMiddlewares.has(m)) routeMiddlewares.push(m.options.server);
     }
   }
-  const server2 = foundRoute?.options.server;
+  const server = foundRoute?.options.server;
   let isHeadFallback = false;
-  if (server2?.handlers && isExactMatch) {
-    const handlers = typeof server2.handlers === "function" ? server2.handlers({ createHandlers: (d) => d }) : server2.handlers;
+  if (server?.handlers && isExactMatch) {
+    const handlers = typeof server.handlers === "function" ? server.handlers({ createHandlers: (d) => d }) : server.handlers;
     const requestMethod = request.method.toUpperCase();
     const handler = requestMethod === "HEAD" ? handlers["HEAD"] ?? handlers["GET"] ?? handlers["ANY"] : handlers[requestMethod] ?? handlers["ANY"];
     isHeadFallback = requestMethod === "HEAD" && handler !== void 0 && !handlers["HEAD"];
@@ -1499,19 +1584,49 @@ async function handleServerRoutes({ getRouter, request, url, executeRouter, cont
   }
   return ctx.response;
 }
-var fetch = createStartHandler(defaultStreamHandler);
-function createServerEntry(entry) {
-  return { async fetch(...args) {
-    return await entry.fetch(...args);
-  } };
-}
-var server_default = createServerEntry({ fetch });
-const server = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  createServerEntry,
-  default: server_default
-}, Symbol.toStringTag, { value: "Module" }));
+var VIRTUAL_MODULES = {
+  startManifest: "tanstack-start-manifest:v",
+  serverFnResolver: "#tanstack-start-server-fn-resolver",
+  pluginAdapters: "#tanstack-start-plugin-adapters"
+};
 export {
-  createMiddleware as c,
-  server as s
+  HEADERS,
+  StartServer,
+  VIRTUAL_MODULES,
+  attachRouterServerSsrUtils2 as attachRouterServerSsrUtils,
+  clearResponseHeaders,
+  clearSession$1 as clearSession,
+  createRequestHandler,
+  createStartHandler,
+  defaultRenderHandler,
+  defaultStreamHandler,
+  defineHandlerCallback,
+  deleteCookie$1 as deleteCookie,
+  getCookie,
+  getCookies,
+  getRequest,
+  getRequestHeader,
+  getRequestHeaders,
+  getRequestHost$1 as getRequestHost,
+  getRequestIP$1 as getRequestIP,
+  getRequestProtocol$1 as getRequestProtocol,
+  getRequestUrl,
+  getResponse,
+  getResponseHeader,
+  getResponseHeaders,
+  getResponseStatus,
+  getSession$1 as getSession,
+  getValidatedQuery$1 as getValidatedQuery,
+  removeResponseHeader,
+  requestHandler,
+  sealSession$1 as sealSession,
+  setCookie$1 as setCookie,
+  setResponseHeader,
+  setResponseHeaders,
+  setResponseStatus,
+  transformPipeableStreamWithRouter,
+  transformReadableStreamWithRouter,
+  unsealSession$1 as unsealSession,
+  updateSession$1 as updateSession,
+  useSession$1 as useSession
 };

@@ -80,11 +80,20 @@ function HeroIllustration() {
         ),
         /* @__PURE__ */ jsx("rect", { x: "60", y: "84", width: "70", height: "120", rx: "6", fill: "oklch(0.16 0.04 280)" }),
         /* @__PURE__ */ jsx("circle", { cx: "95", cy: "225", r: "6", fill: "oklch(0.4 0.05 280)" }),
-        /* @__PURE__ */ jsxs("g", { transform: "translate(82, 124)", stroke: "oklch(0.7 0.18 277)", strokeWidth: "2", strokeLinecap: "round", children: [
-          /* @__PURE__ */ jsx("circle", { cx: "13", cy: "13", r: "3", fill: "oklch(0.7 0.18 277)", stroke: "none" }),
-          /* @__PURE__ */ jsx("path", { d: "M13 5a8 8 0 0 1 8 8 M13 9a4 4 0 0 1 4 4" }),
-          /* @__PURE__ */ jsx("path", { d: "M13 21a8 8 0 0 1-8-8 M13 17a4 4 0 0 1-4-4", opacity: "0.6" })
-        ] }),
+        /* @__PURE__ */ jsxs(
+          "g",
+          {
+            transform: "translate(82, 124)",
+            stroke: "oklch(0.7 0.18 277)",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            children: [
+              /* @__PURE__ */ jsx("circle", { cx: "13", cy: "13", r: "3", fill: "oklch(0.7 0.18 277)", stroke: "none" }),
+              /* @__PURE__ */ jsx("path", { d: "M13 5a8 8 0 0 1 8 8 M13 9a4 4 0 0 1 4 4" }),
+              /* @__PURE__ */ jsx("path", { d: "M13 21a8 8 0 0 1-8-8 M13 17a4 4 0 0 1-4-4", opacity: "0.6" })
+            ]
+          }
+        ),
         /* @__PURE__ */ jsxs("g", { stroke: "oklch(0.62 0.21 277)", strokeWidth: "2", fill: "none", strokeLinecap: "round", children: [
           /* @__PURE__ */ jsx("path", { d: "M155 160 q 20 -25 0 -50", opacity: "0.9" }),
           /* @__PURE__ */ jsx("path", { d: "M175 160 q 30 -35 0 -70", opacity: "0.6" }),
@@ -240,18 +249,11 @@ function Audience() {
       /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-primary", children: "Built for" }),
       /* @__PURE__ */ jsx("h2", { className: "mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl", children: "Small groups who value their time." })
     ] }),
-    /* @__PURE__ */ jsx("div", { className: "mt-12 grid gap-6 sm:grid-cols-3", children: groups.map((g) => /* @__PURE__ */ jsxs(
-      "div",
-      {
-        className: "rounded-xl border border-border/60 bg-card/40 p-6",
-        children: [
-          /* @__PURE__ */ jsx("div", { className: "flex h-10 w-10 items-center justify-center rounded-md bg-accent/40 text-primary", children: /* @__PURE__ */ jsx(g.icon, { className: "h-5 w-5" }) }),
-          /* @__PURE__ */ jsx("h3", { className: "mt-4 text-lg font-medium text-foreground", children: g.title }),
-          /* @__PURE__ */ jsx("p", { className: "mt-2 text-sm leading-relaxed text-muted-foreground", children: g.body })
-        ]
-      },
-      g.title
-    )) })
+    /* @__PURE__ */ jsx("div", { className: "mt-12 grid gap-6 sm:grid-cols-3", children: groups.map((g) => /* @__PURE__ */ jsxs("div", { className: "rounded-xl border border-border/60 bg-card/40 p-6", children: [
+      /* @__PURE__ */ jsx("div", { className: "flex h-10 w-10 items-center justify-center rounded-md bg-accent/40 text-primary", children: /* @__PURE__ */ jsx(g.icon, { className: "h-5 w-5" }) }),
+      /* @__PURE__ */ jsx("h3", { className: "mt-4 text-lg font-medium text-foreground", children: g.title }),
+      /* @__PURE__ */ jsx("p", { className: "mt-2 text-sm leading-relaxed text-muted-foreground", children: g.body })
+    ] }, g.title)) })
   ] }) });
 }
 function Index() {

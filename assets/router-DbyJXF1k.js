@@ -90,7 +90,7 @@ function RootComponent() {
   const { queryClient } = Route$2.useRouteContext();
   return /* @__PURE__ */ jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsx(Outlet, {}) });
 }
-const $$splitComponentImporter$1 = () => import("./about-DZBD4MPb.js");
+const $$splitComponentImporter$1 = () => import("./about-B-uHArf6.js");
 const Route$1 = createFileRoute("/about")({
   component: lazyRouteComponent($$splitComponentImporter$1, "component"),
   head: () => ({
@@ -102,7 +102,7 @@ const Route$1 = createFileRoute("/about")({
     }]
   })
 });
-const $$splitComponentImporter = () => import("./index-DsoaoeoG.js");
+const $$splitComponentImporter = () => import("./index-Cw5V3_8o.js");
 const Route = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter, "component")
 });
