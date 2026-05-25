@@ -1,7 +1,7 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { createRootRouteWithContext, useRouter, Link, Outlet, HeadContent, Scripts, createFileRoute, lazyRouteComponent, createRouter } from "@tanstack/react-router";
 import { jsx, jsxs } from "react/jsx-runtime";
-const appCss = "/assets/styles-Dot0K85I.css";
+const appCss = "/assets/styles-UkQGSKYQ.css";
 function NotFoundComponent() {
   return /* @__PURE__ */ jsx("div", { className: "flex min-h-screen items-center justify-center bg-background px-4", children: /* @__PURE__ */ jsxs("div", { className: "max-w-md text-center", children: [
     /* @__PURE__ */ jsx("h1", { className: "text-7xl font-bold text-foreground", children: "404" }),
@@ -90,7 +90,7 @@ function RootComponent() {
   const { queryClient } = Route$2.useRouteContext();
   return /* @__PURE__ */ jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsx(Outlet, {}) });
 }
-const $$splitComponentImporter$1 = () => import("./about-B-uHArf6.js");
+const $$splitComponentImporter$1 = () => import("./about-BPFJpWgF.js");
 const Route$1 = createFileRoute("/about")({
   component: lazyRouteComponent($$splitComponentImporter$1, "component"),
   head: () => ({
@@ -98,7 +98,7 @@ const Route$1 = createFileRoute("/about")({
       title: "About — PulseID by InsanLab"
     }, {
       name: "description",
-      content: "PulseID is built by InsanLab, an Islamic student-led R&D club. Learn about the people and principles behind the project."
+      content: "PulseID is an ESP32-based access and attendance control system designed for office environments, developed by InsanLab."
     }]
   })
 });
