@@ -88,8 +88,9 @@ const server = {
       const { startInstance } = await import("./assets/start-LbDvuLKC.js");
       const handler = createStartHandler({
         createRouter: getRouter,
-        getOptions: () => startInstance.getOptions()
-      })(defaultStreamHandler);
+        getOptions: () => startInstance.getOptions(),
+        handler: defaultStreamHandler
+      });
       const response = await handler(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
