@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir } from "node:fs/promises";
+import { cp, mkdir, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -7,11 +7,44 @@ const serverDir = path.join(root, "dist/server");
 const serverAssetsDir = path.join(serverDir, "assets");
 const clientAssetsDir = path.join(clientDir, "assets");
 
-await mkdir(clientAssetsDir, { recursive: true });
-await cp(path.join(serverDir, "server.js"), path.join(clientDir, "_worker.js"));
+console.log("Preparing build for Pages (Cloudflare & GitHub)...");
 
+await mkdir(clientAssetsDir, { recursive: true });
+
+// 1. Prepare Cloudflare _worker.js
+const serverFile = path.join(serverDir, "server.js");
+await cp(serverFile, path.join(clientDir, "_worker.js"));
+
+// 2. Copy server assets to client (sometimes needed by TanStack Start)
 const serverAssetEntries = await readdir(serverAssetsDir, { withFileTypes: true });
 for (const entry of serverAssetEntries) {
   if (!entry.isFile() || !entry.name.endsWith(".js")) continue;
   await cp(path.join(serverAssetsDir, entry.name), path.join(clientAssetsDir, entry.name));
 }
+
+// 3. Generate index.html for static hosts (GitHub Pages)
+console.log("Generating index.html...");
+try {
+  const server = await import(path.join(serverDir, "server.js"));
+  const fetchHandler = server.default?.fetch || server.fetch;
+  
+  if (typeof fetchHandler === "function") {
+    const req = new Request("http://localhost/");
+    const res = await fetchHandler(req);
+    const html = await res.text();
+    
+    const indexPath = path.join(clientDir, "index.html");
+    await writeFile(indexPath, html);
+    console.log("Created index.html");
+    
+    // 4. Create 404.html for GitHub Pages SPA routing
+    await cp(indexPath, path.join(clientDir, "404.html"));
+    console.log("Created 404.html");
+  } else {
+    console.error("Could not find fetch handler in server.js");
+  }
+} catch (error) {
+  console.error("Failed to generate static HTML:", error);
+}
+
+console.log("Build preparation complete.");

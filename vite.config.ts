@@ -14,6 +14,6 @@ export default defineConfig({
     output: "static",
   },
   vite: {
-    base: "/pulseid-site/",
+    base: process.env.VITE_BASE_PATH || "/",
   },
 });
