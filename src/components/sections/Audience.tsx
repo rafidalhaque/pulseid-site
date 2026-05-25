@@ -30,19 +30,12 @@ export function Audience() {
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {groups.map((g) => (
-            <div
-              key={g.title}
-              className="rounded-xl border border-border/60 bg-card/40 p-6"
-            >
+            <div key={g.title} className="rounded-xl border border-border/60 bg-card/40 p-6">
               <div className="flex h-10 w-10 items-center justify-center rounded-md bg-accent/40 text-primary">
                 <g.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-lg font-medium text-foreground">
-                {g.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {g.body}
-              </p>
+              <h3 className="mt-4 text-lg font-medium text-foreground">{g.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{g.body}</p>
             </div>
           ))}
         </div>

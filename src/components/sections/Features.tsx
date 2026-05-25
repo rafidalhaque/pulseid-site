@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Bluetooth,
   ClipboardCheck,
@@ -57,9 +51,8 @@ export function Features() {
             Quiet technology that does its job.
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            PulseID is intentionally minimal. It focuses on doing access and
-            attendance well — without surveillance, accounts to manage, or
-            features your team won&apos;t use.
+            PulseID is intentionally minimal. It focuses on doing access and attendance well —
+            without surveillance, accounts to manage, or features your team won&apos;t use.
           </p>
         </div>
 
@@ -71,9 +64,7 @@ export function Features() {
                   <f.icon className="h-5 w-5" />
                 </div>
                 <CardTitle className="mt-4 text-lg">{f.title}</CardTitle>
-                <CardDescription className="text-sm leading-relaxed">
-                  {f.body}
-                </CardDescription>
+                <CardDescription className="text-sm leading-relaxed">{f.body}</CardDescription>
               </CardHeader>
               <CardContent />
             </Card>

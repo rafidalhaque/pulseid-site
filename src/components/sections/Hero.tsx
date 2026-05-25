@@ -22,9 +22,9 @@ export function Hero() {
             Office access and attendance, through the phone in your pocket.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            PulseID uses Bluetooth Low Energy to recognize trusted team members
-            as they arrive — unlocking entry and logging attendance
-            automatically. No cards. No NFC taps. No queues at the door.
+            PulseID uses Bluetooth Low Energy to recognize trusted team members as they arrive —
+            unlocking entry and logging attendance automatically. No cards. No NFC taps. No queues
+            at the door.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -91,7 +91,12 @@ function HeroIllustration() {
       <circle cx="95" cy="225" r="6" fill="oklch(0.4 0.05 280)" />
 
       {/* PulseID icon inside phone */}
-      <g transform="translate(82, 124)" stroke="oklch(0.7 0.18 277)" strokeWidth="2" strokeLinecap="round">
+      <g
+        transform="translate(82, 124)"
+        stroke="oklch(0.7 0.18 277)"
+        strokeWidth="2"
+        strokeLinecap="round"
+      >
         <circle cx="13" cy="13" r="3" fill="oklch(0.7 0.18 277)" stroke="none" />
         <path d="M13 5a8 8 0 0 1 8 8 M13 9a4 4 0 0 1 4 4" />
         <path d="M13 21a8 8 0 0 1-8-8 M13 17a4 4 0 0 1-4-4" opacity="0.6" />

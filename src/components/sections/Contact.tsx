@@ -19,9 +19,9 @@ export function Contact() {
               Request access or ask a question.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              PulseID is offered to small offices and student organizations on
-              an invite basis while we refine the system. Tell us about your
-              team and we&apos;ll get back to you, in sha Allah.
+              PulseID is offered to small offices and student organizations on an invite basis while
+              we refine the system. Tell us about your team and we&apos;ll get back to you, in sha
+              Allah.
             </p>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">

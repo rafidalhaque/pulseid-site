@@ -8,9 +8,7 @@ export function SiteFooter() {
           <Logo className="h-6 w-6 text-primary" />
           <div className="text-sm">
             <p className="font-medium text-foreground">PulseID</p>
-            <p className="text-muted-foreground">
-              A project by InsanLab
-            </p>
+            <p className="text-muted-foreground">A project by InsanLab</p>
           </div>
         </div>
         <p className="text-xs text-muted-foreground">

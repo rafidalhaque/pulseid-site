@@ -3,21 +3,6 @@ import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
-type ServerEntry = {
-  fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
-};
-
-let serverEntryPromise: Promise<ServerEntry> | undefined;
-
-async function getServerEntry(): Promise<ServerEntry> {
-  if (!serverEntryPromise) {
-    serverEntryPromise = import("@tanstack/react-start/server-entry").then(
-      (m) => ((m as { default?: ServerEntry }).default ?? (m as unknown as ServerEntry)),
-    );
-  }
-  return serverEntryPromise;
-}
-
 function brandedErrorResponse(): Response {
   return new Response(renderErrorPage(), {
     status: 500,
@@ -38,11 +23,6 @@ function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boole
   }
 
   const fields = payload as Record<string, unknown>;
-  const expectedKeys = new Set(["message", "status", "unhandled"]);
-  if (!Object.keys(fields).every((key) => expectedKeys.has(key))) {
-    return false;
-  }
-
   return (
     fields.unhandled === true &&
     fields.message === "HTTPError" &&
@@ -69,8 +49,16 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
-      const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
+      const { createStartHandler, defaultStreamHandler } = await import("@tanstack/react-start/server");
+      const { getRouter } = await import("./router");
+      const { startInstance } = await import("./start");
+
+      const handler = createStartHandler({
+        createRouter: getRouter,
+        getOptions: () => startInstance.getOptions(),
+      })(defaultStreamHandler);
+
+      const response = await handler(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);

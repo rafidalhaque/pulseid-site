@@ -31,8 +31,7 @@ export function HowItWorks() {
             From the doorway to the dashboard.
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Four small steps. Once set up, members don&apos;t have to think
-            about it again.
+            Four small steps. Once set up, members don&apos;t have to think about it again.
           </p>
         </div>
 
@@ -40,12 +39,8 @@ export function HowItWorks() {
           {steps.map((s) => (
             <li key={s.n} className="bg-card/60 p-6">
               <span className="text-xs font-mono text-primary">{s.n}</span>
-              <h3 className="mt-3 text-base font-medium text-foreground">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {s.body}
-              </p>
+              <h3 className="mt-3 text-base font-medium text-foreground">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
             </li>
           ))}
         </ol>

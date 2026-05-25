@@ -27,16 +27,16 @@ console.log("Generating index.html...");
 try {
   const server = await import(path.join(serverDir, "server.js"));
   const fetchHandler = server.default?.fetch || server.fetch;
-  
+
   if (typeof fetchHandler === "function") {
     const req = new Request("http://localhost/");
     const res = await fetchHandler(req);
     const html = await res.text();
-    
+
     const indexPath = path.join(clientDir, "index.html");
     await writeFile(indexPath, html);
     console.log("Created index.html");
-    
+
     // 4. Create 404.html for GitHub Pages SPA routing
     await cp(indexPath, path.join(clientDir, "404.html"));
     console.log("Created 404.html");
@@ -45,7 +45,7 @@ try {
     const routes = {
       version: 1,
       include: ["/*"],
-      exclude: ["/assets/*"]
+      exclude: ["/assets/*"],
     };
     await writeFile(path.join(clientDir, "_routes.json"), JSON.stringify(routes, null, 2));
     console.log("Created _routes.json");
