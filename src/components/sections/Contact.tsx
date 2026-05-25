@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 
-const CONTACT_EMAIL = "teamsabily@gmail.com";
+const CONTACT_EMAIL = "rnd@mail.teamsabily.qzz.io";
 
 export function Contact() {
   const subject = encodeURIComponent("PulseID — Request access");
