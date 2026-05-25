@@ -8,7 +8,7 @@ const serverAssetsDir = path.join(serverDir, "assets");
 const clientAssetsDir = path.join(clientDir, "assets");
 
 await mkdir(clientAssetsDir, { recursive: true });
-await cp(path.join(serverDir, "index.js"), path.join(clientDir, "_worker.js"));
+await cp(path.join(serverDir, "server.js"), path.join(clientDir, "_worker.js"));
 
 const serverAssetEntries = await readdir(serverAssetsDir, { withFileTypes: true });
 for (const entry of serverAssetEntries) {
