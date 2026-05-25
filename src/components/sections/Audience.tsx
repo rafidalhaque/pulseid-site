@@ -1,4 +1,4 @@
-import { Building2, Users, Landmark } from "lucide-react";
+import { Building2, Users, Microscope } from "lucide-react";
 
 const groups = [
   {
