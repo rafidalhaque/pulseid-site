@@ -40,6 +40,15 @@ try {
     // 4. Create 404.html for GitHub Pages SPA routing
     await cp(indexPath, path.join(clientDir, "404.html"));
     console.log("Created 404.html");
+
+    // 5. Create _routes.json for Cloudflare Pages
+    const routes = {
+      version: 1,
+      include: ["/*"],
+      exclude: ["/assets/*"]
+    };
+    await writeFile(path.join(clientDir, "_routes.json"), JSON.stringify(routes, null, 2));
+    console.log("Created _routes.json");
   } else {
     console.error("Could not find fetch handler in server.js");
   }
