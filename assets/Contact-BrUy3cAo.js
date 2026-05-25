@@ -1,4 +1,4 @@
-import { jsxs, jsx } from "react/jsx-runtime";
+import { jsx, jsxs } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
@@ -7,38 +7,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Mail } from "lucide-react";
 function Logo({ className }) {
-  return /* @__PURE__ */ jsxs(
-    "svg",
-    {
-      viewBox: "0 0 32 32",
-      className,
-      fill: "none",
-      xmlns: "http://www.w3.org/2000/svg",
-      "aria-hidden": "true",
-      children: [
-        /* @__PURE__ */ jsx("circle", { cx: "16", cy: "16", r: "3", fill: "currentColor" }),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            d: "M16 7c4.97 0 9 4.03 9 9M16 11c2.76 0 5 2.24 5 5",
-            stroke: "currentColor",
-            strokeWidth: "1.75",
-            strokeLinecap: "round"
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          "path",
-          {
-            d: "M16 25c-4.97 0-9-4.03-9-9M16 21c-2.76 0-5-2.24-5-5",
-            stroke: "currentColor",
-            strokeWidth: "1.75",
-            strokeLinecap: "round",
-            opacity: "0.55"
-          }
-        )
-      ]
-    }
-  );
+  return /* @__PURE__ */ jsx("img", { src: "/favicon.png", alt: "PulseID Logo", className });
 }
 function cn(...inputs) {
   return twMerge(clsx(inputs));

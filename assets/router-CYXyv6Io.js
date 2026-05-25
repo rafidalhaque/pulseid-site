@@ -67,6 +67,11 @@ const Route$2 = createRootRouteWithContext()({
     ],
     links: [
       {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon.png"
+      },
+      {
         rel: "stylesheet",
         href: appCss
       }
@@ -90,7 +95,7 @@ function RootComponent() {
   const { queryClient } = Route$2.useRouteContext();
   return /* @__PURE__ */ jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsx(Outlet, {}) });
 }
-const $$splitComponentImporter$1 = () => import("./about-BPFJpWgF.js");
+const $$splitComponentImporter$1 = () => import("./about-CrToE2t_.js");
 const Route$1 = createFileRoute("/about")({
   component: lazyRouteComponent($$splitComponentImporter$1, "component"),
   head: () => ({
@@ -102,7 +107,7 @@ const Route$1 = createFileRoute("/about")({
     }]
   })
 });
-const $$splitComponentImporter = () => import("./index-Cw5V3_8o.js");
+const $$splitComponentImporter = () => import("./index-BrBhKFCq.js");
 const Route = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter, "component")
 });

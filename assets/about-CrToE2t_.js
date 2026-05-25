@@ -1,5 +1,5 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-ClvTK5sS.js";
+import { a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-BrUy3cAo.js";
 import "@tanstack/react-router";
 import "react";
 import "@radix-ui/react-slot";
