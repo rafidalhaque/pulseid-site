@@ -7,11 +7,11 @@ export const Route = createFileRoute("/about")({
   component: About,
   head: () => ({
     meta: [
-      { title: "About — PulseID by Team Sabily" },
+      { title: "About — PulseID by InsanLab" },
       {
         name: "description",
         content:
-          "PulseID is built by Team Sabily, an Islamic student-led R&D club from Bangladesh. Learn about the people and principles behind the project.",
+          "PulseID is built by InsanLab, an Islamic student-led R&D club. Learn about the people and principles behind the project.",
       },
     ],
   }),
@@ -26,11 +26,11 @@ function About() {
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <p className="text-sm font-medium text-primary">About</p>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              A small R&amp;D club from Bangladesh.
+              A small R&amp;D club.
             </h1>
             <div className="prose-invert mt-8 space-y-6 text-base leading-relaxed text-muted-foreground">
               <p>
-                Team Sabily is an Islamic student-led research and development
+                InsanLab is an Islamic student-led research and development
                 club. We build practical tools for our community — software
                 that respects people&apos;s time, attention, and dignity.
               </p>
