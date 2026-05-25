@@ -1,9 +1,9 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-Cz5o_x3O.js";
+import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-XL26_EFr.js";
 import * as React from "react";
 import { Bluetooth, KeyRound, ClipboardCheck, RefreshCw, CalendarDays, LayoutDashboard, Building2, BookOpen, Users } from "lucide-react";
 import "@tanstack/react-router";
-import "./router-1xESc6v9.js";
+import "./router-BWeP0nF6.js";
 import "@tanstack/react-query";
 import "@radix-ui/react-slot";
 import "class-variance-authority";
@@ -27,8 +27,8 @@ function Hero() {
           /* @__PURE__ */ jsx("span", { className: "h-1.5 w-1.5 rounded-full bg-primary" }),
           "Built by InsanLab"
         ] }),
-        /* @__PURE__ */ jsx("h1", { className: "mt-6 text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl", children: "Office access and attendance, through the phone in your pocket." }),
-        /* @__PURE__ */ jsx("p", { className: "mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "PulseID uses Bluetooth Low Energy to recognize trusted team members as they arrive — unlocking entry and logging attendance automatically. No cards. No NFC taps. No queues at the door." }),
+        /* @__PURE__ */ jsx("h1", { className: "mt-6 text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl", children: "Office access and attendance, starting from the palm of your hand." }),
+        /* @__PURE__ */ jsx("p", { className: "mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg", children: "PulseID uses Bluetooth Low Energy to recognize trusted team members as they arrive — unlocking entry and logging attendance when the app is broadcasting. No cards. No NFC taps." }),
         /* @__PURE__ */ jsxs("div", { className: "mt-8 flex flex-wrap gap-3", children: [
           /* @__PURE__ */ jsx(Button, { asChild: true, size: "lg", children: /* @__PURE__ */ jsx("a", { href: "#contact", children: "Request access" }) }),
           /* @__PURE__ */ jsx(Button, { asChild: true, size: "lg", variant: "outline", children: /* @__PURE__ */ jsx("a", { href: "#how", children: "How it works" }) })
@@ -146,8 +146,8 @@ CardFooter.displayName = "CardFooter";
 const features = [
   {
     icon: Bluetooth,
-    title: "Passive BLE detection",
-    body: "Members are recognized as they approach the door. Open the app once, tap broadcast. PulseID handles the rest."
+    title: "Active BLE broadcast",
+    body: "Open the app and tap broadcast to unlock. PulseID recognizes your device as you approach the door."
   },
   {
     icon: KeyRound,
@@ -219,7 +219,7 @@ function HowItWorks() {
     /* @__PURE__ */ jsxs("div", { className: "max-w-2xl", children: [
       /* @__PURE__ */ jsx("p", { className: "text-sm font-medium text-primary", children: "How it works" }),
       /* @__PURE__ */ jsx("h2", { className: "mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl", children: "From the doorway to the dashboard." }),
-      /* @__PURE__ */ jsx("p", { className: "mt-4 text-base text-muted-foreground", children: "Four small steps. Once set up, members don't have to think about it again." })
+      /* @__PURE__ */ jsx("p", { className: "mt-4 text-base text-muted-foreground", children: "Four small steps. Reliable entry for every member, every time the app is open." })
     ] }),
     /* @__PURE__ */ jsx("ol", { className: "mt-12 grid gap-px overflow-hidden rounded-xl border border-border/60 bg-border/60 sm:grid-cols-2 lg:grid-cols-4", children: steps.map((s) => /* @__PURE__ */ jsxs("li", { className: "bg-card/60 p-6", children: [
       /* @__PURE__ */ jsx("span", { className: "text-xs font-mono text-primary", children: s.n }),
@@ -232,7 +232,7 @@ const groups = [
   {
     icon: Building2,
     title: "Small offices",
-    body: "Teams of 5–50 who want reliable access and attendance without enterprise hardware contracts."
+    body: "Teams of 5–25 who want reliable access and attendance without enterprise hardware contracts."
   },
   {
     icon: BookOpen,
