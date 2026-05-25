@@ -1,9 +1,9 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-BAXUxpJG.js";
+import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-Cz5o_x3O.js";
 import * as React from "react";
 import { Bluetooth, KeyRound, ClipboardCheck, RefreshCw, CalendarDays, LayoutDashboard, Building2, BookOpen, Users } from "lucide-react";
 import "@tanstack/react-router";
-import "./router-DjhuLAfh.js";
+import "./router-1xESc6v9.js";
 import "@tanstack/react-query";
 import "@radix-ui/react-slot";
 import "class-variance-authority";
@@ -147,7 +147,7 @@ const features = [
   {
     icon: Bluetooth,
     title: "Passive BLE detection",
-    body: "Members are recognized as they approach the door. No app to open, no button to press."
+    body: "Members are recognized as they approach the door. Open the app once, tap broadcast. PulseID handles the rest."
   },
   {
     icon: KeyRound,
@@ -196,12 +196,12 @@ const steps = [
   {
     n: "01",
     title: "Enroll a member",
-    body: "An admin adds the member through the dashboard. Their phone is paired with PulseID and assigned a signed identifier."
+    body: "An admin adds the member through the dashboard. Their device is enrolled and assigned a signed daily identifier."
   },
   {
     n: "02",
     title: "Phone broadcasts quietly",
-    body: "In the background, the phone advertises a rotating BLE identifier. Nothing personal is broadcast — only a daily-rotating UUID."
+    body: "With the app open, the phone advertises a rotating BLE identifier. Nothing personal is broadcast — only a daily-rotating UUID that resets every 24 hours."
   },
   {
     n: "03",

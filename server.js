@@ -83,8 +83,8 @@ async function normalizeCatastrophicSsrResponse(response) {
 const server = {
   async fetch(request, env, ctx) {
     try {
-      const { createStartHandler, defaultStreamHandler } = await import("./assets/server-7kzIEbUT.js");
-      const { getRouter } = await import("./assets/router-DjhuLAfh.js").then((n) => n.r);
+      const { createStartHandler, defaultStreamHandler } = await import("./assets/server-B6bj8JEe.js");
+      const { getRouter } = await import("./assets/router-1xESc6v9.js").then((n) => n.r);
       const { startInstance } = await import("./assets/start-LbDvuLKC.js");
       const handler = createStartHandler({
         createRouter: getRouter,
