@@ -13,4 +13,7 @@ export default defineConfig({
     server: { entry: "server" },
     output: "static",
   },
+  vite: {
+    base: "/pulseid-site/",
+  },
 });
