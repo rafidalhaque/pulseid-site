@@ -1,9 +1,9 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-BupkPi6q.js";
+import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-o5rRyf0Z.js";
 import * as React from "react";
-import { Bluetooth, KeyRound, ClipboardCheck, RefreshCw, CalendarDays, LayoutDashboard, Building2, Users, Landmark } from "lucide-react";
+import { Bluetooth, KeyRound, ClipboardCheck, RefreshCw, CalendarDays, LayoutDashboard, Building2, Users } from "lucide-react";
 import "@tanstack/react-router";
-import "./router-LF3w0CNF.js";
+import "./router--adkTzl5.js";
 import "@tanstack/react-query";
 import "@radix-ui/react-slot";
 import "class-variance-authority";
@@ -240,7 +240,7 @@ const groups = [
     body: "Shared workspaces that need automated entry logging and attendance tracking across a consistent member base."
   },
   {
-    icon: Landmark,
+    icon: Microscope,
     title: "University labs and research rooms",
     body: "Fixed academic spaces with a responsible person on-site to manage setup and maintenance."
   }
