@@ -16,7 +16,7 @@ export function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Built by Team Sabily · R&amp;D Club
+            Built by InsanLab · R&amp;D Club
           </div>
           <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Office access and attendance, through the phone in your pocket.
