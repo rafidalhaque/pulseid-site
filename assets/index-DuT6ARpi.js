@@ -1,9 +1,9 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-XL26_EFr.js";
+import { B as Button, c as cn, a as SiteHeader, C as Contact, S as SiteFooter } from "./Contact-DjBLO3Wx.js";
 import * as React from "react";
 import { Bluetooth, KeyRound, ClipboardCheck, RefreshCw, CalendarDays, LayoutDashboard, Building2, BookOpen, Users } from "lucide-react";
 import "@tanstack/react-router";
-import "./router-BWeP0nF6.js";
+import "./router-BFyVuvlZ.js";
 import "@tanstack/react-query";
 import "@radix-ui/react-slot";
 import "class-variance-authority";
@@ -231,18 +231,18 @@ function HowItWorks() {
 const groups = [
   {
     icon: Building2,
-    title: "Small offices",
-    body: "Teams of 5–25 who want reliable access and attendance without enterprise hardware contracts."
+    title: "Small offices and startups",
+    body: "Teams of 5–25 with a fixed office entrance who want reliable access and attendance without enterprise hardware contracts."
   },
   {
     icon: BookOpen,
-    title: "Islamic student organizations",
-    body: "Halaqahs, study circles, and campus clubs that need quiet, dignified attendance tracking."
+    title: "Co-working spaces",
+    body: "Shared workspaces that need automated entry logging and attendance tracking across a consistent member base."
   },
   {
     icon: Users,
-    title: "Local community teams",
-    body: "Volunteer groups and project teams run on modest budgets."
+    title: "University labs and research rooms",
+    body: "Fixed academic spaces with a responsible person on-site to manage setup and maintenance."
   }
 ];
 function Audience() {
