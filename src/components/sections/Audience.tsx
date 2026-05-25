@@ -1,4 +1,4 @@
-import { Building2, BookOpen, Users } from "lucide-react";
+import { Building2, Users, FlaskConical } from "lucide-react";
 
 const groups = [
   {
@@ -7,12 +7,12 @@ const groups = [
     body: "Teams of 5–25 with a fixed office entrance who want reliable access and attendance without enterprise hardware contracts.",
   },
   {
-    icon: BookOpen,
+    icon: Users,
     title: "Co-working spaces",
     body: "Shared workspaces that need automated entry logging and attendance tracking across a consistent member base.",
   },
   {
-    icon: Users,
+    icon: FlaskConical,
     title: "University labs and research rooms",
     body: "Fixed academic spaces with a responsible person on-site to manage setup and maintenance.",
   },
