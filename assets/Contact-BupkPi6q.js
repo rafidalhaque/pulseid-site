@@ -1,6 +1,6 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
-import { l as logoUrl } from "./router-PIeiNeYg.js";
+import { l as logoUrl } from "./router-LF3w0CNF.js";
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
