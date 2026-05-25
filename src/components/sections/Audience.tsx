@@ -12,7 +12,7 @@ const groups = [
     body: "Shared workspaces that need automated entry logging and attendance tracking across a consistent member base.",
   },
   {
-    icon: Landmark,
+    icon: Microscope,
     title: "University labs and research rooms",
     body: "Fixed academic spaces with a responsible person on-site to manage setup and maintenance.",
   },
