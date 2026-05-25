@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 
-const CONTACT_EMAIL = "rnd@mail.teamsabily.qzz.io";
+const CONTACT_EMAIL = "lab@insan.qzz.io";
 
 export function Contact() {
   const subject = encodeURIComponent("PulseID — Request access");
   const body = encodeURIComponent(
-    "Assalamu alaikum Team Sabily,\n\nWe'd like to learn more about PulseID for our team.\n\nOrganization:\nTeam size:\nLocation:\nNotes:\n\nJazakum Allahu khairan.",
+    "Assalamu alaikum InsanLab,\n\nWe'd like to learn more about PulseID for our team.\n\nOrganization:\nTeam size:\nLocation:\nNotes:\n\nJazakum Allahu khairan.",
   );
 
   return (
@@ -28,7 +28,7 @@ export function Contact() {
             <Button asChild size="lg">
               <a href={`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`}>
                 <Mail className="h-4 w-4" />
-                Contact Team Sabily
+                Contact InsanLab
               </a>
             </Button>
             <a
